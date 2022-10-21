@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.welcome.WelcomeFragment"
+    >
+    <data>
+        <variable
+            name="user"
+            type="com.example.udacityfirstproject.model.User" />
+    </data>
+    <FrameLayout   android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/w_screen_back"
+        android:padding="4dp"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:id="@+id/welcomeMessage"
+                    android:textColor="@color/textColor"
+                    android:text=""/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineHeight="20dp"
+                    android:text="@string/lorem"/>
+                <Button
+                    android:id="@+id/nextBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_back"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/white"
+                    android:text="next ➤"/>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>
