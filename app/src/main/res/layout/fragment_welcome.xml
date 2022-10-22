@@ -5,11 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.welcome.WelcomeFragment"
     >
+
+<!--    data binding for username -->
     <data>
         <variable
             name="viewModel"
             type="com.example.udacityfirstproject.viewmodel.ShoesViewModel"/>
     </data>
+<!--    data binding for username -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

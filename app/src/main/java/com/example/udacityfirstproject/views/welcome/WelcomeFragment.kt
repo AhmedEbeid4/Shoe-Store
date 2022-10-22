@@ -25,6 +25,7 @@ class WelcomeFragment : Fragment() {
     ): View? {
         binding=DataBindingUtil.inflate(layoutInflater,R.layout.fragment_welcome,container,false)
         viewModel = ViewModelProvider(requireActivity())[ShoesViewModel::class.java]
+//      I had Used Data Binding here for user name which is in the view model instance
         binding.viewModel = viewModel
         binding.nextBtn.setOnClickListener {
             val action=WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment()
