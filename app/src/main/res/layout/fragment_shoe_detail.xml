@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/ifr_back">
+        <!--    linear layout because the elements are vertically aligned-->
 
         <LinearLayout
             android:id="@+id/fieldsFather"
@@ -80,7 +81,7 @@
                     android:padding="23dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
@@ -88,6 +89,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <!--                to make the button at bottom left-->
 
                 <Button
                     android:id="@+id/cancel_button"
@@ -100,7 +102,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
-
+<!--                to make the button at bottom right-->
                 <Button
                     android:id="@+id/actionBtn"
                     android:layout_width="wrap_content"

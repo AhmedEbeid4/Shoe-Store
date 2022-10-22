@@ -4,17 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.instruction.InstructionFragment">
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/ifr_back"
-        android:padding="8dp">
 
-        <LinearLayout
+<!--    linear layout because the elements are vertically aligned-->
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/ifr_back"
+            android:padding="8dp"
             android:orientation="vertical">
-            <View
+        <!-- to fill the space -->
+
+        <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
@@ -43,7 +43,8 @@
                     android:textColor="@color/textColor"
                     android:textSize="25sp" />
             </LinearLayout>
-            <View
+        <!-- to fill the space -->
+        <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
@@ -58,5 +59,4 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </LinearLayout>
-    </FrameLayout>
 </layout>
