@@ -25,7 +25,7 @@ class WelcomeFragment : Fragment() {
     ): View? {
         binding=DataBindingUtil.inflate(layoutInflater,R.layout.fragment_welcome,container,false)
         viewModel = ViewModelProvider(requireActivity())[ShoesViewModel::class.java]
-        binding.viewModel=viewModel
+        binding.viewModel = viewModel
         binding.nextBtn.setOnClickListener {
             val action=WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment()
             findNavController().navigate(action)

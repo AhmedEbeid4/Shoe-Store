@@ -1,82 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:paddingVertical="2dp">
-    <LinearLayout
 
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/item_back"
-        android:paddingLeft="6dp"
         android:layout_marginVertical="10dp"
+        android:background="@drawable/item_back"
+        android:orientation="horizontal"
         android:paddingVertical="10dp"
-        android:orientation="horizontal">
+        android:paddingLeft="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginRight="8dp"
-            android:src="@drawable/sneakers"/>
+            android:src="@drawable/sneakers" />
+
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.6"
             android:layout_height="match_parent"
+            android:layout_weight="0.6"
             android:orientation="vertical">
+
             <TextView
+                android:id="@+id/shoe_name"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:textSize="18sp"
-                android:id="@+id/shoe_name"
                 android:layout_weight="1"
                 android:text="name"
-                android:textColor="@color/textColor"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/shoe_size"
-                android:layout_height="0dp"
-                android:text="size"
-                android:textSize="18sp"
-                android:textColor="@color/textColor"/>
-        </LinearLayout>
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Nike"
-                android:id="@+id/shoe_company"
                 android:textColor="@color/textColor"
                 android:textSize="18sp" />
-        </RelativeLayout>
+
+            <TextView
+                android:id="@+id/shoe_size"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="size"
+                android:textColor="@color/textColor"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/shoe_company"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="Nike"
+                android:textColor="@color/textColor"
+                android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.5"
             android:layout_height="match_parent"
+            android:layout_weight="0.5"
             android:orientation="vertical">
+
             <ImageView
+                android:id="@+id/deleteBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:id="@+id/deleteBtn"
                 android:src="@drawable/delete"
-                app:tint="@color/colorPrimary"
-                android:layout_marginBottom="5dp"/>
+                app:tint="@color/colorPrimary" />
+
             <ImageView
+                android:id="@+id/editBtn"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:id="@+id/editBtn"
                 android:layout_marginTop="5dp"
+                android:layout_weight="1"
                 android:src="@drawable/ic_baseline_edit_24"
                 app:tint="@color/colorPrimary" />
         </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

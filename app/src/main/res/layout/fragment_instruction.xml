@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.instruction.InstructionFragment">
     <FrameLayout
@@ -9,33 +10,43 @@
         android:background="@drawable/ifr_back"
         android:padding="8dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/textColor"
-                    android:textSize="25sp"
-                    android:text="@string/m1"
                     android:id="@+id/message1"
-                    android:layout_marginBottom="10dp"
-                    />
-                <TextView
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/m1"
                     android:textColor="@color/textColor"
-                    android:textSize="25sp"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/message1"
+                    android:layout_marginTop="10dp"
                     android:text="@string/m"
-                    android:layout_below="@id/message1"/>
+                    android:textColor="@color/textColor"
+                    android:textSize="25sp" />
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
             <Button
                 android:id="@+id/nextBtn"
                 android:layout_width="match_parent"
@@ -43,7 +54,9 @@
                 android:background="@drawable/btn_back"
                 android:text="Start ▼"
                 android:textColor="@color/white"
-                android:layout_alignParentBottom="true"/>
-        </RelativeLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
     </FrameLayout>
 </layout>

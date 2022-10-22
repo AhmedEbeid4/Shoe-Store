@@ -10,7 +10,8 @@
             name="viewModel"
             type="com.example.udacityfirstproject.viewmodel.ShoesViewModel"/>
     </data>
-    <FrameLayout   android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/w_screen_back"
         android:padding="4dp"
@@ -57,5 +58,5 @@
                     android:text="next ➤"/>
             </LinearLayout>
         </ScrollView>
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
