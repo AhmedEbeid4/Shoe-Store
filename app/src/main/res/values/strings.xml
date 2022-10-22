@@ -14,5 +14,6 @@
     <string name="m">You can add , update and delete your shoes data</string>
     <string name="m1">Welcome to Shoes Store which can help you to store shoes data</string>
     <string name="logout">Logout</string>
+    <string name="welcome_to_our_shoes_app">Welcome to our Shoes App</string>
 
 </resources>

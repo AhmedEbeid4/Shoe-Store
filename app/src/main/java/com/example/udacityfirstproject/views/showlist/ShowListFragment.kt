@@ -50,7 +50,6 @@ class ShowListFragment : Fragment() {
         deleteButton.setOnClickListener {
             binding.itemsContainer.removeView(v)
             viewModel.shoesList.value?.remove(shoe)
-            println(viewModel.shoesList.value)
         }
         val editButton = v.findViewById(R.id.editBtn) as ImageView
         editButton.setOnClickListener {

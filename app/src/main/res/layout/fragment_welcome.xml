@@ -7,8 +7,8 @@
     >
     <data>
         <variable
-            name="user"
-            type="com.example.udacityfirstproject.model.User" />
+            name="viewModel"
+            type="com.example.udacityfirstproject.viewmodel.ShoesViewModel"/>
     </data>
     <FrameLayout   android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,13 +23,24 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 >
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:id="@+id/welcomeMessage"
-                    android:textColor="@color/textColor"
-                    android:text=""/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/textColor"
+                        android:text="Welcome "/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:id="@+id/welcomeMessage"
+                        android:textColor="@color/textColor"
+                        android:text="@{viewModel.user.name}"/>
+                </LinearLayout>
                 <TextView
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"

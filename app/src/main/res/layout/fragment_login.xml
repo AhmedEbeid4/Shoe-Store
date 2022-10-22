@@ -24,7 +24,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="cursive"
-                    android:text="Welcome to out Shoes App"
+                    android:text="@string/welcome_to_our_shoes_app"
                     android:textAlignment="center"
                     android:textColor="@color/DarkColor"
                     android:textSize="34sp"
