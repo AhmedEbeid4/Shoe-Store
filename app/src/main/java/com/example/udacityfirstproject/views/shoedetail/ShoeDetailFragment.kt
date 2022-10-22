@@ -141,7 +141,6 @@ class ShoeDetailFragment : Fragment() {
             override fun handleOnBackPressed() {
                 back()
             }
-
         })
     }
     private fun back(){
