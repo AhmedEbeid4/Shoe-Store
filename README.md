@@ -1,5 +1,6 @@
 # Udacity-First-Project
 
+<p> 
 ![Screenshot_20221021_141548](https://user-images.githubusercontent.com/90563044/197194037-e2c19ba9-20d8-456c-a409-dd183a1284cd.png)
 
 ![Screenshot_20221021_141625](https://user-images.githubusercontent.com/90563044/197194073-242cec11-aaae-4e60-b098-b90cfb144448.png)
@@ -21,3 +22,4 @@
 ![Screenshot_20221021_141825](https://user-images.githubusercontent.com/90563044/197194410-c7b3000a-e60e-4090-8875-9d4588f14461.png)
 
 
+</p>
