@@ -35,6 +35,7 @@ class ShoeDetailFragment : Fragment() {
         binding=DataBindingUtil.inflate(layoutInflater,R.layout.fragment_shoe_detail,container,false)
         viewModel = ViewModelProvider(requireActivity())[ShoesViewModel::class.java]
         val args by navArgs<ShoeDetailFragmentArgs>()
+//      for statue variable in xml layout file using data binding
         statue=args.statue
         binding.statue=statue
         if(statue == Texts.add){
