@@ -3,7 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.shoedetail.ShoeDetailFragment">
-
+    <data>
+        <variable
+            name="shoe"
+            type="com.example.udacityfirstproject.model.Shoe" />
+        <variable
+            name="statue"
+            type="String" />
+    </data>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,6 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
+                    android:text="@{shoe.name}"
                     android:padding="23dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,12 +52,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/shoe_size">
-
+<!--            if the user will add element it will be empty-->
                 <EditText
                     android:id="@+id/shoeSizeField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:text="@{shoe.size == 0.0 ? `` : Double.toString(shoe.size)}"
                     android:inputType="numberDecimal"
                     android:padding="23dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +73,8 @@
                     android:id="@+id/shoe_company_field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="23dp" />
+                    android:padding="23dp"
+                    android:text="@{shoe.company}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +87,8 @@
                     android:id="@+id/shoe_desc_field"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="23dp" />
+                    android:padding="23dp"
+                    android:text="@{shoe.description}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
@@ -95,6 +105,7 @@
                     android:id="@+id/cancel_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="back"
                     android:text="@string/cancel"
                     android:textColor="@color/textColor" />
 
@@ -107,7 +118,7 @@
                     android:id="@+id/actionBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/add"
+                    android:text="@{statue}"
                     android:textColor="@color/textColor" />
             </LinearLayout>
         </LinearLayout>

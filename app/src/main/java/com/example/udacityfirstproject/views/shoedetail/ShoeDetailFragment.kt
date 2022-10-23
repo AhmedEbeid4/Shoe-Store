@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.fragment_shoe_detail.*
 class ShoeDetailFragment : Fragment() {
     private lateinit var binding : FragmentShoeDetailBinding
     private lateinit var viewModel: ShoesViewModel
-
+    private lateinit var statue:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,15 +35,15 @@ class ShoeDetailFragment : Fragment() {
         binding=DataBindingUtil.inflate(layoutInflater,R.layout.fragment_shoe_detail,container,false)
         viewModel = ViewModelProvider(requireActivity())[ShoesViewModel::class.java]
         val args by navArgs<ShoeDetailFragmentArgs>()
-
-        if(args.statue == Texts.add){
+        statue=args.statue
+        binding.statue=statue
+        if(statue == Texts.add){
             binding.actionBtn.setOnClickListener {
                 addShoe()
             }
-        }else if(args.statue == Texts.update){
-            binding.actionBtn.text= "Edit"
+        }else if(statue == Texts.update){
+            binding.shoe=args.shoe
             val index:Int=args.index
-            assignProp(args.shoe!!)
             binding.actionBtn.setOnClickListener {
                 if(index != -1){
                     updateShoe(args.shoe!!,index)
@@ -52,31 +52,23 @@ class ShoeDetailFragment : Fragment() {
                     back()
                 }
             }
-        }else if(args.statue == Texts.view){
+        }else if(statue == Texts.view){
             binding.actionBtn.visibility=View.GONE
             binding.cancelButton.visibility=View.GONE
-            val s:Shoe= args.shoe!!
-            viewShoe(s)
+            binding.shoe=args.shoe
+            viewShoe()
         }
         binding.cancelButton.setOnClickListener {
             back()
         }
-
         return binding.root
     }
 
-    private fun viewShoe(s:Shoe){
-        assignProp(s)
+    private fun viewShoe(){
         binding.shoeNameField.isEnabled=false
         binding.shoeSizeField.isEnabled=false
         binding.shoeCompanyField.isEnabled=false
         binding.shoeDescField.isEnabled=false
-    }
-    private fun assignProp(s:Shoe){
-        binding.shoeNameField.setText(s.name)
-        binding.shoeSizeField.setText(s.size.toString())
-        binding.shoeCompanyField.setText(s.company)
-        binding.shoeDescField.setText(s.description)
     }
     private fun updateShoe(s:Shoe,index:Int){
         var newShoe=Shoe(
@@ -147,6 +139,4 @@ class ShoeDetailFragment : Fragment() {
         val action=ShoeDetailFragmentDirections.actionShoeDetailFragmentToShowListFragment()
         findNavController().navigate(action)
     }
-
-
 }

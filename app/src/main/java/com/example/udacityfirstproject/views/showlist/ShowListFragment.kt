@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.udacityfirstproject.R
 import com.example.udacityfirstproject.databinding.FragmentShowListBinding
+import com.example.udacityfirstproject.databinding.ItemLayoutBinding
 import com.example.udacityfirstproject.model.Shoe
 import com.example.udacityfirstproject.model.Texts
 import com.example.udacityfirstproject.viewmodel.ShoesViewModel
