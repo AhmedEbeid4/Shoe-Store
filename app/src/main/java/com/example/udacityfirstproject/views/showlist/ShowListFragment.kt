@@ -43,26 +43,21 @@ class ShowListFragment : Fragment() {
         }
     }
     private fun assignShoe(shoe: Shoe) :View{
-        var v: View = layoutInflater.inflate(R.layout.item_layout, null)
-        val shoeNameTextView = v.findViewById(R.id.shoe_name) as TextView
-        val shoeSizeTextView = v.findViewById(R.id.shoe_size) as TextView
-        val shoeCompanyTextView = v.findViewById(R.id.shoe_company) as TextView
-        val deleteButton = v.findViewById(R.id.deleteBtn) as ImageView
-        deleteButton.setOnClickListener {
-            binding.itemsContainer.removeView(v)
+//      data binding for the custom layout
+        val itemLayoutBinding = ItemLayoutBinding.inflate(LayoutInflater.from(requireContext()),null,false)
+        itemLayoutBinding.shoe=shoe
+        itemLayoutBinding.deleteBtn.setOnClickListener {
+            binding.itemsContainer.removeView(itemLayoutBinding.root)
             viewModel.shoesList.value?.remove(shoe)
         }
-        val editButton = v.findViewById(R.id.editBtn) as ImageView
-        editButton.setOnClickListener {
+        itemLayoutBinding.editBtn.setOnClickListener {
             editShoe(shoe)
         }
-        shoeNameTextView.text=shoe.name
-        shoeSizeTextView.text=shoe.size.toString()
-        shoeCompanyTextView.text=shoe.company
-        v.setOnClickListener {
+
+        itemLayoutBinding.container.setOnClickListener {
             viewShoe(shoe)
         }
-        return v
+        return itemLayoutBinding.root
     }
 
     private fun editShoe(shoe:Shoe){
